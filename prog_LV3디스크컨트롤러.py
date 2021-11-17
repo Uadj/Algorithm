@@ -16,7 +16,7 @@ def solution(jobs):
             before = now;
             now += temp[0]
             num += now-temp[1]
-            check += 1
+            check +=-1
         else:
             now +=-1
     return int(num/length)
