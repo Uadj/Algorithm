@@ -1,9 +1,7 @@
 //https://programmers.co.kr/learn/courses/30/lessons/1829
 //dfs
 #include <vector>
-#include <iostream>
 #include <cstring>
-#include <algorithm>
 using namespace std;
 
 bool visited[101][101];
