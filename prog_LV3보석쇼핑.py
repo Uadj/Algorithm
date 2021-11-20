@@ -18,17 +18,27 @@ def solution(gems):
     return answer
 """
 #타인코드 max heap
-import heapq
+def solution(gems):
+    gemSet = set()
+    for gem in gems:
+        if gem not in gemSet:
+            gemSet.add(gem)
+    kinds = len(gemSet)
+    
+    answer = [1, len(gems)]
+    left = 0; right = 0
+    while left <= right and right < len(gems):
+        gemSet = set()
+        for gem in gems[left:right+1]:
+            if gem not in gemSet:
+                gemSet.add(gem)
+        
+        if len(gemSet) == kinds:
+            if answer[1]-answer[0] > right-left:
+                answer = [left+1, right+1]
+            left += 1
 
-def solution(n, works):
-    if n >= sum(works):
-        return 0
-    
-    works = [-w for w in works]
-    heapq.heapify(works)
-    for _ in range(n):
-        i = heapq.heappop(works)
-        i += 1
-        heapq.heappush(works, i)
-    
-    return sum([w ** 2 for w in works])
+        elif len(gemSet) < kinds:
+            right += 1
+        
+    return answer
