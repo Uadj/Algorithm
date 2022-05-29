@@ -11,13 +11,13 @@ using namespace std;
 
 int n,m;
 int arr[100][100]={100000};
-int INF = 100000;
+int INF = 10000001;
 int main()
 {
     cin >> n >> m;
     for(int i=0; i<n;i++){
         for(int j=0; j<n;j++){
-            arr[i][j]=100000;
+            arr[i][j]=10000001;
             if(i==j) arr[i][j]=0;
         }
     }
